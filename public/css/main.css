@@ -24,3 +24,19 @@ Purchase: http://themeforest.net/user/DigiSamaritan
 @import url("../js/plugins/jquery-ui/jquery-ui.css");
 @import url("../js/plugins/c3_chart/c3.css");
 @import url("style.css");
+
+/*MY STYLES*/
+.smartphone-icon{
+    max-width: 30px;
+}
+.latest-phones{
+    max-width: 80%;
+    margin: 0 auto;
+}
+/*HELPERS*/
+.center-text{
+    text-align: center;
+}
+.padd-l-5{
+    padding-left: 5px;
+}

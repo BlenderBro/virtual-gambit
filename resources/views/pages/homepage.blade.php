@@ -267,49 +267,49 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="rs_filte">
-                        <div class="row">
-                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                <ul class="rs_sorting">
-                                    <li>
-                                        <a href="#" class="filter" data-filter="all">Toate </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="filter" data-filter=".mockups">Cat 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="filter" data-filter=".html">Cat 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="filter" data-filter=".psd">Cat 3</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                <div class="rs_sort">
-                                    <i class="fa fa-sort"></i> Filtre
-                                    <i class="glyphicon glyphicon-option-vertical" aria-hidden="true"></i>
-                                </div>
-                                <div class="rs_product_sorting">
-                                    <ul>
-                                        <li>
-                                            <a href="">Pret</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Top Vanzari</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Rating</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{--<div class="row">--}}
+                {{--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">--}}
+                    {{--<div class="rs_filte">--}}
+                        {{--<div class="row">--}}
+                            {{--<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">--}}
+                                {{--<ul class="rs_sorting">--}}
+                                    {{--<li>--}}
+                                        {{--<a href="#" class="filter" data-filter="all">Toate </a>--}}
+                                    {{--</li>--}}
+                                    {{--<li>--}}
+                                        {{--<a href="#" class="filter" data-filter=".mockups">Cat 1</a>--}}
+                                    {{--</li>--}}
+                                    {{--<li>--}}
+                                        {{--<a href="#" class="filter" data-filter=".html">Cat 2</a>--}}
+                                    {{--</li>--}}
+                                    {{--<li>--}}
+                                        {{--<a href="#" class="filter" data-filter=".psd">Cat 3</a>--}}
+                                    {{--</li>--}}
+                                {{--</ul>--}}
+                            {{--</div>--}}
+                            {{--<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">--}}
+                                {{--<div class="rs_sort">--}}
+                                    {{--<i class="fa fa-sort"></i> Filtre--}}
+                                    {{--<i class="glyphicon glyphicon-option-vertical" aria-hidden="true"></i>--}}
+                                {{--</div>--}}
+                                {{--<div class="rs_product_sorting">--}}
+                                    {{--<ul>--}}
+                                        {{--<li>--}}
+                                            {{--<a href="">Pret</a>--}}
+                                        {{--</li>--}}
+                                        {{--<li>--}}
+                                            {{--<a href="">Top Vanzari</a>--}}
+                                        {{--</li>--}}
+                                        {{--<li>--}}
+                                            {{--<a href="">Rating</a>--}}
+                                        {{--</li>--}}
+                                    {{--</ul>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
             <div class="row">
                 <div id="rs_grid">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -324,12 +324,12 @@
                                     <div class="rs_product_div">
                                         <div class="rs_featureddiv">Nou</div>
                                         <div class="rs_product_img">
-                                            <img src="http://placehold.it/253X172" class="img-responsive" alt="">
+                                            <img src="{{ asset($product->image_url) }}" class="img-responsive latest-phones" alt="">
                                             <div class="rs_overlay">
                                                 <div class="rs_overlay_inner">
                                                     <ul>
                                                         <li>
-                                                            <a class="fancybox animated slideInDown" data-fancybox-group="product" href="images/500X343.png" title="{{$product->author}}">
+                                                            <a class="fancybox animated slideInDown" data-fancybox-group="product" href="{{ asset($product->image_url) }}" title="{{$product->name}}">
                                                                 <i class="fa fa-eye"></i>
                                                             </a>
                                                         </li>
@@ -348,17 +348,16 @@
                                         </div>
 
                                         <div class="rs_product_detail">
+                                            <h5 class="center-text"><a href="product_single.html">{{$product->name}}</a></h5>
                                         </div>
                                         <div class="rs_product_div_footer">
                                             <div class="rs_author_div">
-                                                <img src="http://placehold.it/30X30" class="img-responsive" alt="">
+                                                <img src="{{ asset('images/smartphone.svg') }}" class="img-responsive smartphone-icon" alt="">
                                                 <div>
                                                     <h4>
-                                                        <a href="author_dashboard.html">{{$product->author}}</a>
+                                                        Samsung
                                                     </h4>
-                                                    <p>
-                                                       Designer
-                                                    </p>
+                                                    <p>Galaxy S5</p>
                                                 </div>
                                             </div>
                                             <div class="rs_share">
@@ -386,7 +385,7 @@
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="rs_btn_div rs_toppadder60">
-                        <a href="product_4Column.html" class="rs_button rs_button_orange">Vezi toate produsele</a>
+                        <a href="{{url('/toate-produsele')}}" class="rs_button rs_button_orange">Vezi toate produsele</a>
                     </div>
                 </div>
             </div>

@@ -124,8 +124,8 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="rs_copyright">
-                    <p>&copy;
-                        <a href="index.html">Second Skin</a>
+                    <p>&copy; <?php echo(date('Y '));?>
+                        <a href="index.html">OtherSkin</a>
                         <br> All rights reserved.
                     </p>
                 </div>
