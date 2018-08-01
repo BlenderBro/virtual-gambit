@@ -348,7 +348,7 @@
                                         </div>
 
                                         <div class="rs_product_detail">
-                                            <h5 class="center-text"><a href="product_single.html">{{$product->name}}</a></h5>
+                                            <h5 class="center-text"><a href="{{url('/produs/'.$product->name)}}">{{$product->name}}</a></h5>
                                         </div>
                                         <div class="rs_product_div_footer">
                                             <div class="rs_author_div">

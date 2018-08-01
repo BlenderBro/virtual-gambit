@@ -30,7 +30,11 @@ Purchase: http://themeforest.net/user/DigiSamaritan
     max-width: 30px;
 }
 .latest-phones{
+    margin: 0 auto;
     max-width: 80%;
+}
+.single-phone{
+    text-align: center;
     margin: 0 auto;
 }
 /*HELPERS*/
@@ -39,4 +43,7 @@ Purchase: http://themeforest.net/user/DigiSamaritan
 }
 .padd-l-5{
     padding-left: 5px;
+}
+.padd-l-15{
+    padding-left: 15px;
 }

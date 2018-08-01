@@ -14,7 +14,7 @@
                 <img src="http://placehold.it/289X193" class="img-responsive" alt="">
                 <div class="rs_menu_pic_overlay">
                     <div class="rs_menu_inner_pic">
-                        <img src="images/menulogo.png" alt="">
+                        <img src="{{asset('images/menulogo.png')}}" alt="">
                     </div>
                 </div>
 
@@ -103,7 +103,7 @@
             </div>
             <div class="rs_topheader_center">
                 <a href="{{url('/')}}">
-                    <img src="images/small_logo.png" alt="">
+                    <img src="{{asset('images/small_logo.png')}}" alt="">
                 </a>
             </div>
         </div>

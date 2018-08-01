@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -46,9 +47,12 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($name)
     {
-        //
+        $latest = DB::table('products')->orderBy('created_at', 'desc')->paginate(5);
+        $product = Product::where('name', $name)->first();
+
+        return view('pages.single-product', compact('product', 'latest'))->with($name);
     }
 
     /**
