@@ -107,44 +107,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="row">
                             <div class="rs_pagination rs_toppadder40 rs_bottompadder40 text-right">
-                                <ul class="pagination">
-                                    <li>
-                                        <a href="#" aria-label="Previous">
-								<span aria-hidden="true">
-								  <i class="fa fa-angle-left">
-								  </i>
-								</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="active">2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">3</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">4</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">5</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">...</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">12</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" aria-label="Next">
-								<span aria-hidden="true">
-								  <i class="fa fa-angle-right"></i>
-								</span>
-                                        </a>
-                                    </li>
-                                </ul>
+                                {!! $products->links() !!}
                             </div>
                         </div>
                     </div>

@@ -37,6 +37,10 @@ Purchase: http://themeforest.net/user/DigiSamaritan
     text-align: center;
     margin: 0 auto;
 }
+li.page-item.active > span{
+    background-color: #438AFE;
+    border-color: #438AFE;
+}
 /*HELPERS*/
 .center-text{
     text-align: center;

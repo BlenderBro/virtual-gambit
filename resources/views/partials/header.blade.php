@@ -22,13 +22,13 @@
             <div class="rs_main_menu">
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="{{url('/toate-produsele')}}">
                             <i class="fas fa-shopping-basket"></i> Produse</a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <i class="fas fa-user-astronaut"></i> Artisti</a>
-                    </li>
+                    {{--<li>--}}
+                        {{--<a href="#">--}}
+                            {{--<i class="fas fa-user-astronaut"></i> Artisti</a>--}}
+                    {{--</li>--}}
                     <li>
                         <a href="#">
                             <i class="fas fa-user-ninja"></i> Despre Noi</a>
@@ -42,9 +42,15 @@
                             <i class="fas fa-pencil-alt"></i> Blog</a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{url('/contact')}}">
                             <i class="fas fa-envelope-open"></i> Contact</a>
                     </li>
+                    <?php
+                        if(\Illuminate\Support\Facades\Auth::check()){
+                            echo('<li><a href="home"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>');
+                        }
+                    ?>
+                    {{--<li><a href="{{url('/home')}}"><i class="fas fa-envelope-open"></i> Dashboard</a></li>--}}
                 </ul>
             </div>
             <div class="rs_social">
