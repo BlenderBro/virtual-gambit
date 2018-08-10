@@ -91,25 +91,6 @@
         </svg>
     </div>
 </div>
-{{--<div class="rs_topheader">--}}
-    {{--<div class="container-fluid">--}}
-        {{--<div class="row">--}}
-            {{--<div class="rs_topheader_left">--}}
-                {{--<div class="rs_menubtn">--}}
-                        {{--<span class="rs_bars" id="open-button">--}}
-                            {{--<i class="fa fa-bars"></i>--}}
-                        {{--</span>--}}
-                {{--</div>--}}
-
-            {{--</div>--}}
-            {{--<div class="rs_topheader_center">--}}
-                {{--<a href="{{url('/')}}">--}}
-                    {{--<img src="{{asset('images/small_logo.png')}}" alt="">--}}
-                {{--</a>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-{{--</div>--}}
 <div class="rs_topheader">
     <div class="container-fluid">
         <div class="row">
@@ -146,7 +127,7 @@
                 </div>
                 @endif
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><i class="fa fa-shopping-cart"></i> <span class="badge badge-danger">4</span></a></li>
+                    <li><a href="{{url('/shopping-cart')}}"><i class="fa fa-shopping-cart"></i> <span class="badge badge-danger">4</span></a></li>
                 </ul>
             </div>
         </div>

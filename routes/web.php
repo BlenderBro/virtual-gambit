@@ -16,6 +16,9 @@ Route::get('produs/{slug}', 'ProductController@show');
 //add product
 //edit/del product
 
+//CART
+Route::get('/shopping-cart', 'CartController@index');
+
 
 
 
