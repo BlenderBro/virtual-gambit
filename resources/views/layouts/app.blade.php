@@ -13,6 +13,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
     <meta name="MobileOptimized" content="320">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!--srart theme style -->
     <link href="{{asset('css/main.css')}}" rel="stylesheet" type="text/css">
     <!-- end theme style -->
@@ -27,3 +28,37 @@
 @yield('content')
 
 @include('partials.footer')
+
+<!-- Script Start -->
+<script src="/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.js" type="text/javascript"></script>
+<script src="/js/modernizr.custom.js" type="text/javascript"></script>
+<script src="/js/plugins/rating/star-rating.js" type="text/javascript"></script>
+<script src="/js/plugins/countto/jquery.countTo.js" type="text/javascript"></script>
+<script src="/js/plugins/countto/jquery.appear.js" type="text/javascript"></script>
+<script src="/js/plugins/owl/owl.carousel.js" type="text/javascript"></script>
+<script src="/js/plugins/revel/jquery.themepunch.tools.min.js" type="text/javascript"></script>
+<script src="/js/plugins/revel/jquery.themepunch.revolution.min.js" type="text/javascript"></script>
+<script src="/js/plugins/revel/revolution.extension.actions.min.js" type="text/javascript"></script>
+<script src="/js/plugins/revel/revolution.extension.layeranimation.min.js" type="text/javascript"></script>
+<script src="/js/plugins/revel/revolution.extension.navigation.min.js" type="text/javascript"></script>
+<script src="/js/plugins/revel/revolution.extension.parallax.min.js" type="text/javascript"></script>
+<script src="/js/plugins/revel/revolution.extension.slideanims.min.js" type="text/javascript"></script>
+<script src="/js/jquery.mixitup.js" type="text/javascript"></script>
+<script src="/js/plugins/fancybox/jquery.fancybox.js" type="text/javascript"></script>
+<script src="/js/plugins/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+<script src="/js/plugins/bootstrap-slider/bootstrap-slider.js" type="text/javascript"></script>
+<script src="/js/plugins/offcanvasmenu/snap.svg-min.js" type="text/javascript"></script>
+<script src="/js/plugins/offcanvasmenu/classie.js" type="text/javascript"></script>
+<script src="/js/plugins/offcanvasmenu/main3.js" type="text/javascript"></script>
+<script src="/js/plugins/jquery-ui/jquery-ui.js" type="text/javascript"></script>
+<script src="/js/plugins/c3_chart/d3.v3.min.js" type="text/javascript"></script>
+<script src="/js/plugins/c3_chart/c3.js" type="text/javascript"></script>
+<script src="/js/pgwslideshow.js" type="text/javascript"></script>
+<script src="/js/custom.js" type="text/javascript"></script>
+
+@yield('cart-script')
+<!-- Script end -->
+</body>
+
+</html>

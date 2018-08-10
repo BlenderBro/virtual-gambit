@@ -21,6 +21,7 @@
         </div>
     </div>
     <!--Breadcrumb end-->
+    <div id="app"></div>
     <div class="rs_graybg rs_toppadder100 rs_bottompadder100">
         <div class="container">
             <div class="row">
@@ -537,4 +538,7 @@
             </div>
         </div>
     </div>
+@endsection
+@section('cart-script')
+    <script src="/js/app.js" type="text/javascript"></script>
 @endsection
