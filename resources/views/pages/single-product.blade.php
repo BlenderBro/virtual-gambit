@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('content')
 
+    <?php
+    $cat = \App\Category::where('id', $product->category_id)->first();
+    ?>
     <!--Breadcrumb start-->
     <div class="rs_pagetitle rs_toppadder40 rs_bottompadder40">
         <div class="rs_overlay"></div>
@@ -15,7 +18,8 @@
                     <ul class="breadcrumb">
                         <li><a href="{{url('/')}}">home</a></li>
                         <li><a href="{{url('/toate-produsele')}}">Toate Produsele</a></li>
-                        <li class="active">{{$product->name}}</li>
+                        <li class="active">{!!  $product->name !!}</li>
+                        <p>{{$cat->name}}</p>
                     </ul>
                 </div>
             </div>
@@ -56,87 +60,87 @@
                         </div>
                     </div>
                     {{--<aside class="widget widget_categories">--}}
-                        {{--<h4 style="text-transform: none" class="widget-title">Suport si Intrebari Frecvente</h4>--}}
-                        {{--<div id="faq">--}}
-                            {{--<div class="rs_support_faq_section padd-l-15">--}}
-                                {{--<h4>Product Support</h4>--}}
-                                {{--<div class="row">--}}
-                                    {{--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">--}}
-                                        {{--<div class="rs_include_products">--}}
-                                            {{--<h5>Garantia Calitatii</h5>--}}
-                                            {{--<p>Husele sunt dintr-un silicon premium, fiind atent selecționate de colegii--}}
-                                                {{--noștri de la producție, de asemenea,--}}
-                                                {{--marginile sunt transparente. Tot spatele husei este acoperit conform--}}
-                                                {{--imaginilor de produs, iar finisajul este unul mat.--}}
-                                                {{--Husele sunt durabile și rezistente, antișoc și anti-zgârieturi.</p>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">--}}
-                                        {{--<div class="rs_notinclude_products">--}}
-                                            {{--<h5>Livrare si Retur</h5>--}}
-                                            {{--<p>Livrările sunt efectuate de partenerul nostru, Bookurier, iar costul--}}
-                                                {{--livrării este de 16 ron (TVA inclus), indiferent de--}}
-                                                {{--localitatea în care locuiești. </br> În cazul în care comanda ta ajunge--}}
-                                                {{--la tine : incompletă, cu probleme de producție sau--}}
-                                                {{--diferită față de ceea ce ai cerut, schimbul este gratuit. Pentru astfel--}}
-                                                {{--de situații ne poți contacta la adresa--}}
-                                                {{--de email : ceva@provider.ro</p>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                                {{--<div class="rs_singleproduct_faq_questions">--}}
-                                    {{--<div id="accordion">--}}
-                                        {{--<h3>License of use products</h3>--}}
-                                        {{--<div>--}}
-                                            {{--<h5>How do I contact support?</h5>--}}
-                                            {{--<p>We work with clients big and small across a range of sectors and we--}}
-                                                {{--utilise all forms of media to get your name out there in a way that’s--}}
-                                                {{--right for you. We work with clients big and small across a range of--}}
-                                                {{--sectors and we utilise all forms of media to get your name out there in--}}
-                                                {{--a way that’s right for you.</p>--}}
-                                            {{--<p>We work with clients big and small across a range of sectors and we--}}
-                                                {{--utilise all forms of media to get your name.</p>--}}
-                                        {{--</div>--}}
-                                        {{--<h3>I got an error with PayPal. How can I resolve the issue?</h3>--}}
-                                        {{--<div>--}}
-                                            {{--<p>We are a fairly small, flexible design studio that designs for print and--}}
-                                                {{--web. We work flexibly with clients to fulfil their design needs. Whether--}}
-                                                {{--you need to create a brand from scratch, including marketing materials--}}
-                                                {{--and a beautiful and functional website or whether you are looking for a--}}
-                                                {{--design refresh we are confident you will be pleased with the--}}
-                                                {{--results.</p>--}}
-                                        {{--</div>--}}
-                                        {{--<h3>I cannot find the license key for activating the theme I have bought some--}}
-                                            {{--time ago. Where can I find it?</h3>--}}
-                                        {{--<div>--}}
-                                            {{--<p>Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque--}}
-                                                {{--lobortis. Phasellus pellentesque purus in massa. Aenean in pede.--}}
-                                                {{--Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed--}}
-                                                {{--commodo, magna quislacinia ornare, quam ante aliquam nisi, eu iaculis--}}
-                                                {{--leo purus venenatis dui.</p>--}}
-                                        {{--</div>--}}
-                                        {{--<h3>Will the themes work with my plugins?</h3>--}}
-                                        {{--<div>--}}
-                                            {{--<p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus et--}}
-                                                {{--malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in--}}
-                                                {{--faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia--}}
-                                                {{--mauris vel est.</p>--}}
-                                            {{--<p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat--}}
-                                                {{--lectus. Class aptent taciti sociosqu ad litora torquent per conubia--}}
-                                                {{--nostra, per inceptos himenaeos.</p>--}}
-                                        {{--</div>--}}
-                                        {{--<h3>Can I buy a “lifetime” license?</h3>--}}
-                                        {{--<div>--}}
-                                            {{--<p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer--}}
-                                                {{--ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit--}}
-                                                {{--amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo--}}
-                                                {{--ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque--}}
-                                                {{--vulputate.</p>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
+                    {{--<h4 style="text-transform: none" class="widget-title">Suport si Intrebari Frecvente</h4>--}}
+                    {{--<div id="faq">--}}
+                    {{--<div class="rs_support_faq_section padd-l-15">--}}
+                    {{--<h4>Product Support</h4>--}}
+                    {{--<div class="row">--}}
+                    {{--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">--}}
+                    {{--<div class="rs_include_products">--}}
+                    {{--<h5>Garantia Calitatii</h5>--}}
+                    {{--<p>Husele sunt dintr-un silicon premium, fiind atent selecționate de colegii--}}
+                    {{--noștri de la producție, de asemenea,--}}
+                    {{--marginile sunt transparente. Tot spatele husei este acoperit conform--}}
+                    {{--imaginilor de produs, iar finisajul este unul mat.--}}
+                    {{--Husele sunt durabile și rezistente, antișoc și anti-zgârieturi.</p>--}}
+                    {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">--}}
+                    {{--<div class="rs_notinclude_products">--}}
+                    {{--<h5>Livrare si Retur</h5>--}}
+                    {{--<p>Livrările sunt efectuate de partenerul nostru, Bookurier, iar costul--}}
+                    {{--livrării este de 16 ron (TVA inclus), indiferent de--}}
+                    {{--localitatea în care locuiești. </br> În cazul în care comanda ta ajunge--}}
+                    {{--la tine : incompletă, cu probleme de producție sau--}}
+                    {{--diferită față de ceea ce ai cerut, schimbul este gratuit. Pentru astfel--}}
+                    {{--de situații ne poți contacta la adresa--}}
+                    {{--de email : ceva@provider.ro</p>--}}
+                    {{--</div>--}}
+                    {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="rs_singleproduct_faq_questions">--}}
+                    {{--<div id="accordion">--}}
+                    {{--<h3>License of use products</h3>--}}
+                    {{--<div>--}}
+                    {{--<h5>How do I contact support?</h5>--}}
+                    {{--<p>We work with clients big and small across a range of sectors and we--}}
+                    {{--utilise all forms of media to get your name out there in a way that’s--}}
+                    {{--right for you. We work with clients big and small across a range of--}}
+                    {{--sectors and we utilise all forms of media to get your name out there in--}}
+                    {{--a way that’s right for you.</p>--}}
+                    {{--<p>We work with clients big and small across a range of sectors and we--}}
+                    {{--utilise all forms of media to get your name.</p>--}}
+                    {{--</div>--}}
+                    {{--<h3>I got an error with PayPal. How can I resolve the issue?</h3>--}}
+                    {{--<div>--}}
+                    {{--<p>We are a fairly small, flexible design studio that designs for print and--}}
+                    {{--web. We work flexibly with clients to fulfil their design needs. Whether--}}
+                    {{--you need to create a brand from scratch, including marketing materials--}}
+                    {{--and a beautiful and functional website or whether you are looking for a--}}
+                    {{--design refresh we are confident you will be pleased with the--}}
+                    {{--results.</p>--}}
+                    {{--</div>--}}
+                    {{--<h3>I cannot find the license key for activating the theme I have bought some--}}
+                    {{--time ago. Where can I find it?</h3>--}}
+                    {{--<div>--}}
+                    {{--<p>Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque--}}
+                    {{--lobortis. Phasellus pellentesque purus in massa. Aenean in pede.--}}
+                    {{--Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed--}}
+                    {{--commodo, magna quislacinia ornare, quam ante aliquam nisi, eu iaculis--}}
+                    {{--leo purus venenatis dui.</p>--}}
+                    {{--</div>--}}
+                    {{--<h3>Will the themes work with my plugins?</h3>--}}
+                    {{--<div>--}}
+                    {{--<p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus et--}}
+                    {{--malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in--}}
+                    {{--faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia--}}
+                    {{--mauris vel est.</p>--}}
+                    {{--<p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat--}}
+                    {{--lectus. Class aptent taciti sociosqu ad litora torquent per conubia--}}
+                    {{--nostra, per inceptos himenaeos.</p>--}}
+                    {{--</div>--}}
+                    {{--<h3>Can I buy a “lifetime” license?</h3>--}}
+                    {{--<div>--}}
+                    {{--<p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer--}}
+                    {{--ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit--}}
+                    {{--amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo--}}
+                    {{--ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque--}}
+                    {{--vulputate.</p>--}}
+                    {{--</div>--}}
+                    {{--</div>--}}
+                    {{--</div>--}}
+                    {{--</div>--}}
+                    {{--</div>--}}
                     {{--</aside>--}}
                 </div>
                 {{--RIGHT SIDEBAR START--}}
@@ -222,7 +226,7 @@
                                         </div>
                                         <div class="rs_product_detail">
                                             <h5 class="center-text"><a
-                                                        href="{{url('produs/'.$l->name)}}">{{$l->name}}</a>
+                                                        href="{{url('produs/'.$l->slug)}}">{{$l->name}}</a>
                                             </h5>
                                         </div>
                                         <div class="rs_product_div_footer">

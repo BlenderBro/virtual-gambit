@@ -12,7 +12,7 @@ Route::get('404', ['as' => '404', 'uses' => 'ErrorHandlerController@errorCode404
 
 // PRODUCTS
 Route::get('toate-produsele', 'ProductController@index');
-Route::get('produs/{name}', 'ProductController@show');
+Route::get('produs/{slug}', 'ProductController@show');
 //add product
 //edit/del product
 

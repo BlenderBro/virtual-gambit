@@ -41,6 +41,9 @@ li.page-item.active > span{
     background-color: #438AFE;
     border-color: #438AFE;
 }
+.badge{
+    background-color: #F25F5C;
+}
 /*HELPERS*/
 .center-text{
     text-align: center;

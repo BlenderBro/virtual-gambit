@@ -67,7 +67,7 @@
                                                     </div>
                                                     <div class="rs_product_detail">
                                                         <h5 class="center-text"><a
-                                                            href="{{url('produs/'.$product->name)}}">{{$product->name}}</a>
+                                                            href="{{url('produs/'.$product->slug)}}">{{$product->name}}</a>
                                                         </h5>
                                                     </div>
                                                     <div class="rs_product_div_footer">

@@ -45,11 +45,6 @@
                         <a href="{{url('/contact')}}">
                             <i class="fas fa-envelope-open"></i> Contact</a>
                     </li>
-                    <?php
-                        if(\Illuminate\Support\Facades\Auth::check()){
-                            echo('<li><a href="home"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>');
-                        }
-                    ?>
                     {{--<li><a href="{{url('/home')}}"><i class="fas fa-envelope-open"></i> Dashboard</a></li>--}}
                 </ul>
             </div>
@@ -96,21 +91,63 @@
         </svg>
     </div>
 </div>
+{{--<div class="rs_topheader">--}}
+    {{--<div class="container-fluid">--}}
+        {{--<div class="row">--}}
+            {{--<div class="rs_topheader_left">--}}
+                {{--<div class="rs_menubtn">--}}
+                        {{--<span class="rs_bars" id="open-button">--}}
+                            {{--<i class="fa fa-bars"></i>--}}
+                        {{--</span>--}}
+                {{--</div>--}}
+
+            {{--</div>--}}
+            {{--<div class="rs_topheader_center">--}}
+                {{--<a href="{{url('/')}}">--}}
+                    {{--<img src="{{asset('images/small_logo.png')}}" alt="">--}}
+                {{--</a>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+{{--</div>--}}
 <div class="rs_topheader">
     <div class="container-fluid">
         <div class="row">
             <div class="rs_topheader_left">
                 <div class="rs_menubtn">
-                        <span class="rs_bars" id="open-button">
-                            <i class="fa fa-bars"></i>
-                        </span>
+                    <span class="rs_bars" id="open-button"><i class="fa fa-bars"></i></span>
+                    <!-- <span class="rs_close" id="close-button"><i class="fa fa-times"></i></span> -->
                 </div>
-
+                {{--<div class="rs_search">--}}
+                    {{--<form>--}}
+                        {{--<input type="text" class="rs_search_input" placeholder="Cauta ceva......">--}}
+                    {{--</form>--}}
+                {{--</div>--}}
             </div>
             <div class="rs_topheader_center">
-                <a href="{{url('/')}}">
-                    <img src="{{asset('images/small_logo.png')}}" alt="">
-                </a>
+                <a href="{{url('/')}}"><img src="{{asset('images/small_logo.png')}}" alt=""></a>
+            </div>
+            <div class="rs_topheader_right">
+
+                @if(\Illuminate\Support\Facades\Auth::check())
+                <div class="rs_user_pic">
+                    <div>
+                        <h6>{{\Illuminate\Support\Facades\Auth::user()->name}}</h6>
+                        <h5># orders</h5>
+                    </div>
+                    <img src="{{asset('images/user-icon.png')}}" alt="">
+                    <i class="glyphicon glyphicon-option-vertical" aria-hidden="true"></i>
+                </div>
+                <div class="rs_user_profile">
+                    <ul>
+                        <li><a href="{{url('/home')}}"><i class="fa fa-cog"></i> Dashboard</a></li>
+                        <li><a href="{{url('/logout')}}"><i class="fa fa-futbol-o"></i> Logout</a></li>
+                    </ul>
+                </div>
+                @endif
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i class="fa fa-shopping-cart"></i> <span class="badge badge-danger">4</span></a></li>
+                </ul>
             </div>
         </div>
     </div>
