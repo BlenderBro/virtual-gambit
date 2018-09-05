@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -13,7 +14,10 @@ class CartController extends Controller
      */
     public function index()
     {
-        return view('pages.cart');
+        //cookies
+        $id = session()->getId();
+        $latest = DB::table('products')->orderBy('created_at', 'desc')->paginate(5);
+        return view('pages.cart', compact('latest', 'id'));
     }
 
     /**

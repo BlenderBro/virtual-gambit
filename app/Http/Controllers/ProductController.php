@@ -17,6 +17,7 @@ class ProductController extends Controller
     {
         $count = count(Product::all());
         $products = Product::paginate(12);
+
         return view('pages.all-products', compact('products', 'count'));
     }
 

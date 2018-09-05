@@ -30,6 +30,7 @@
 @include('partials.footer')
 
 <!-- Script Start -->
+@yield('cart-script')
 <script src="/js/jquery-1.11.3.min.js" type="text/javascript"></script>
 <script src="/js/bootstrap.js" type="text/javascript"></script>
 <script src="/js/modernizr.custom.js" type="text/javascript"></script>
@@ -57,7 +58,6 @@
 <script src="/js/pgwslideshow.js" type="text/javascript"></script>
 <script src="/js/custom.js" type="text/javascript"></script>
 
-@yield('cart-script')
 <!-- Script end -->
 </body>
 

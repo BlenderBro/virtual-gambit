@@ -21,7 +21,12 @@
         </div>
     </div>
     <!--Breadcrumb end-->
-    <div id="app"></div>
+    <?php
+       echo $id;
+    ?>
+    <div id="comp">
+    <example-component></example-component>
+    </div>
     <div class="rs_graybg rs_toppadder100 rs_bottompadder100">
         <div class="container">
             <div class="row">
@@ -116,12 +121,13 @@
             </div>
         </div>
     </div>
-    <div class="rs_recentlyview_slider_section rs_toppadder100 rs_bottompadder100">
+    {{--LATEST PRODUCTS START--}}
+    <div class="rs_recentlyview_slider_section rs_toppadder100 rs_bottompadder80">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="rs_main_heading rs_pink_heading rs_bottompadder60">
-                        <h3>YOU MAY BE INTERESTED</h3>
+                        <h3>Recent Adaugate</h3>
                         <div><span><i class="fa fa-heart"></i></span></div>
                     </div>
                 </div>
@@ -129,416 +135,83 @@
             <div class="row">
                 <div class="rs_recentlyview_slider rs_bottompadder60">
                     <div id="owl-demo" class="owl-carousel owl-theme">
-                        <div class="item">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="rs_product_div">
-                                    <div class="rs_product_img">
-                                        <img src="http://placehold.it/253X172" class="img-responsive" alt="">
-                                        <div class="rs_overlay">
-                                            <div class="rs_overlay_inner">
+                        @foreach($latest as $l)
+                            <div class="item">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="rs_product_div">
+                                        <div class="rs_featureddiv">Nou</div>
+                                        <div class="rs_product_img">
+                                            <img src="{{ asset($l->image_url) }}"
+                                                 class="img-responsive latest-phones" alt="">
+                                            <div class="rs_overlay">
+                                                <div class="rs_overlay_inner">
+                                                    <ul>
+                                                        <li>
+                                                            <a class="fancybox animated slideInDown"
+                                                               data-fancybox-group="product"
+                                                               href="{{ asset($l->image_url) }}"
+                                                               title="{{$l->name}}">
+                                                                <i class="fa fa-eye"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" class="animated slideInDown">
+                                                                <i class="fa fa-shopping-cart"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="rs_product_price">
+                                                <h2>
+                                                    <small>$</small>{{$l->price}}</h2>
+                                            </div>
+                                        </div>
+                                        <div class="rs_product_detail">
+                                            <h5 class="center-text"><a
+                                                        href="{{url('produs/'.$l->slug)}}">{{$l->name}}</a>
+                                            </h5>
+                                        </div>
+                                        <div class="rs_product_div_footer">
+                                            <div class="rs_author_div">
+                                                <img src="{{ asset('images/smartphone.svg') }}"
+                                                     class="img-responsive smartphone-icon" alt="">
+                                                <div>
+                                                    <h4>
+                                                        Samsung
+                                                    </h4>
+                                                    <p>Galaxy S5</p>
+                                                </div>
+                                            </div>
+                                            <div class="rs_share">
                                                 <ul>
-                                                    <li><a class="fancybox animated slideInDown" data-fancybox-group="product" href="images/500X343.png" title="Vertical WP Theme"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a href="#" class="animated slideInDown"><i class="fa fa-shopping-cart"></i></a></li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <i class="fab fa-facebook-square"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <i class="fab fa-instagram"></i>
+                                                        </a>
+                                                    </li>
                                                 </ul>
                                             </div>
-                                        </div>
-                                        <div class="rs_product_price"><h2><small>$</small>29</h2></div>
-                                    </div>
-
-                                    <div class="rs_product_detail">
-                                        <h5><a href="product_single.html">Vertical WP Theme</a></h5>
-                                        <div class="rs_rating">
-                                            <form>
-                                                <input value="5" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs">
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="rs_product_div_footer">
-                                        <div class="rs_author_div">
-                                            <img src="http://placehold.it/30X30" class="img-responsive" alt="">
-                                            <div>
-                                                <h4>Unimech Design</h4>
-                                                <p>Wordpress</p>
-                                            </div>
-                                        </div>
-                                        <div class="rs_share">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-comment-o"></i> <span>16</span></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i> <span>29</span></a></li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="rs_product_div">
-                                    <div class="rs_product_img">
-                                        <img src="http://placehold.it/253X172" class="img-responsive" alt="">
-                                        <div class="rs_overlay">
-                                            <div class="rs_overlay_inner">
-                                                <ul>
-                                                    <li><a class="fancybox animated slideInDown" data-fancybox-group="product" href="images/500X343.png" title="20 Device Mock-up"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a href="#" class="animated slideInDown"><i class="fa fa-shopping-cart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="rs_product_price"><h2><small>$</small>10</h2></div>
-                                    </div>
-
-                                    <div class="rs_product_detail">
-                                        <h5><a href="product_single.html">20 Device Mock-up</a></h5>
-                                        <div class="rs_rating">
-                                            <form>
-                                                <input value="5" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs">
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="rs_product_div_footer">
-                                        <div class="rs_author_div">
-                                            <img src="http://placehold.it/30X30" class="img-responsive" alt="">
-                                            <div>
-                                                <h4>Joshep Gordon</h4>
-                                                <p>Mock up</p>
-                                            </div>
-                                        </div>
-                                        <div class="rs_share">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-comment-o"></i> <span>08</span></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i> <span>13</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="rs_product_div">
-                                    <div class="rs_featureddiv">Featured</div>
-                                    <div class="rs_product_img">
-                                        <img src="http://placehold.it/253X172" class="img-responsive" alt="">
-                                        <div class="rs_overlay">
-                                            <div class="rs_overlay_inner">
-                                                <ul>
-                                                    <li><a class="fancybox animated slideInDown" data-fancybox-group="product" href="images/500X343.png" title="2PX Line Icons Set"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a href="#" class="animated slideInDown"><i class="fa fa-shopping-cart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="rs_product_price"><h2><small>$</small>6</h2></div>
-                                    </div>
-
-                                    <div class="rs_product_detail">
-                                        <h5><a href="product_single.html">2PX Line Icons Set</a></h5>
-                                        <div class="rs_rating">
-                                            <form>
-                                                <input value="5" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs">
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="rs_product_div_footer">
-                                        <div class="rs_author_div">
-                                            <img src="http://placehold.it/30X30" class="img-responsive" alt="">
-                                            <div>
-                                                <h4>Scralett John</h4>
-                                                <p>Icons</p>
-                                            </div>
-                                        </div>
-                                        <div class="rs_share">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-comment-o"></i> <span>18</span></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i> <span>43</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="rs_product_div">
-                                    <div class="rs_product_img">
-                                        <img src="http://placehold.it/253X172" class="img-responsive" alt="">
-                                        <div class="rs_overlay">
-                                            <div class="rs_overlay_inner">
-                                                <ul>
-                                                    <li><a class="fancybox animated slideInDown" data-fancybox-group="product" href="images/500X343.png" title="120 Premium Templates Bundle"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a href="#" class="animated slideInDown"><i class="fa fa-shopping-cart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="rs_product_price"><h2><small>$</small>55</h2></div>
-                                    </div>
-
-                                    <div class="rs_product_detail">
-                                        <h5><a href="product_single.html">120 Premium Templates Bundle</a></h5>
-                                        <div class="rs_rating">
-                                            <form>
-                                                <input value="5" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs">
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="rs_product_div_footer">
-                                        <div class="rs_author_div">
-                                            <img src="http://placehold.it/30X30" class="img-responsive" alt="">
-                                            <div>
-                                                <h4>Julianne Moore</h4>
-                                                <p>HTML Templates</p>
-                                            </div>
-                                        </div>
-                                        <div class="rs_share">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-comment-o"></i> <span>13</span></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i> <span>38</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="rs_product_div">
-                                    <div class="rs_product_img">
-                                        <img src="http://placehold.it/253X172" class="img-responsive" alt="">
-                                        <div class="rs_overlay">
-                                            <div class="rs_overlay_inner">
-                                                <ul>
-                                                    <li><a class="fancybox animated slideInDown" data-fancybox-group="product" href="images/500X343.png" title="20 Fancy Hero Images"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a href="#" class="animated slideInDown"><i class="fa fa-shopping-cart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="rs_product_price"><h2><small>$</small>48</h2></div>
-                                    </div>
-
-                                    <div class="rs_product_detail">
-                                        <h5><a href="product_single.html">20 Fancy Hero Images</a></h5>
-                                        <div class="rs_rating">
-                                            <form>
-                                                <input value="5" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs">
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="rs_product_div_footer">
-                                        <div class="rs_author_div">
-                                            <img src="http://placehold.it/30X30" class="img-responsive" alt="">
-                                            <div>
-                                                <h4>DigitalGravy</h4>
-                                                <p>Stock Images</p>
-                                            </div>
-                                        </div>
-                                        <div class="rs_share">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-comment-o"></i> <span>29</span></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i> <span>44</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="rs_product_div">
-                                    <div class="rs_product_img">
-                                        <img src="http://placehold.it/253X172" class="img-responsive" alt="">
-                                        <div class="rs_overlay">
-                                            <div class="rs_overlay_inner">
-                                                <ul>
-                                                    <li><a class="fancybox animated slideInDown" data-fancybox-group="product" href="images/500X343.png" title="Minimal HTML5 Template"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a href="#" class="animated slideInDown"><i class="fa fa-shopping-cart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="rs_product_price"><h2><small>$</small>16</h2></div>
-                                    </div>
-
-                                    <div class="rs_product_detail">
-                                        <h5><a href="product_single.html">Minimal HTML5 Template</a></h5>
-                                        <div class="rs_rating">
-                                            <form>
-                                                <input value="5" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs">
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="rs_product_div_footer">
-                                        <div class="rs_author_div">
-                                            <img src="http://placehold.it/30X30" class="img-responsive" alt="">
-                                            <div>
-                                                <h4>Rob Brown</h4>
-                                                <p>HTML Templates</p>
-                                            </div>
-                                        </div>
-                                        <div class="rs_share">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-comment-o"></i> <span>37</span></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i> <span>86</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="rs_product_div">
-                                    <div class="rs_product_img">
-                                        <img src="http://placehold.it/253X172" class="img-responsive" alt="">
-                                        <div class="rs_overlay">
-                                            <div class="rs_overlay_inner">
-                                                <ul>
-                                                    <li><a class="fancybox animated slideInDown" data-fancybox-group="product" href="images/500X343.png" title="Multipurpose WP Theme"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a href="#" class="animated slideInDown"><i class="fa fa-shopping-cart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="rs_product_price"><h2><small>$</small>48</h2></div>
-                                    </div>
-
-                                    <div class="rs_product_detail">
-                                        <h5><a href="product_single.html">Multipurpose WP Theme</a></h5>
-                                        <div class="rs_rating">
-                                            <form>
-                                                <input value="5" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs">
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="rs_product_div_footer">
-                                        <div class="rs_author_div">
-                                            <img src="http://placehold.it/30X30" class="img-responsive" alt="">
-                                            <div>
-                                                <h4>Glenne Headly</h4>
-                                                <p>Wordpress</p>
-                                            </div>
-                                        </div>
-                                        <div class="rs_share">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-comment-o"></i> <span>124</span></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i> <span>30</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="rs_product_div">
-                                    <div class="rs_product_img">
-                                        <img src="http://placehold.it/253X172" class="img-responsive" alt="">
-                                        <div class="rs_overlay">
-                                            <div class="rs_overlay_inner">
-                                                <ul>
-                                                    <li><a class="fancybox animated slideInDown" data-fancybox-group="product" href="images/500X343.png" title="Brand Identity Mock-up Set"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a href="#" class="animated slideInDown"><i class="fa fa-shopping-cart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="rs_product_price"><h2><small>$</small>22</h2></div>
-                                    </div>
-
-                                    <div class="rs_product_detail">
-                                        <h5><a href="product_single.html">Brand Identity Mock-up Set</a></h5>
-                                        <div class="rs_rating">
-                                            <form>
-                                                <input value="5" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs">
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="rs_product_div_footer">
-                                        <div class="rs_author_div">
-                                            <img src="http://placehold.it/30X30" class="img-responsive" alt="">
-                                            <div>
-                                                <h4>Brie Larson</h4>
-                                                <p>Mockup</p>
-                                            </div>
-                                        </div>
-                                        <div class="rs_share">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-comment-o"></i> <span>18</span></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i> <span>41</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="rs_product_div">
-                                    <div class="rs_product_img">
-                                        <img src="http://placehold.it/253X172" class="img-responsive" alt="">
-                                        <div class="rs_overlay">
-                                            <div class="rs_overlay_inner">
-                                                <ul>
-                                                    <li><a class="fancybox animated slideInDown" data-fancybox-group="product" href="images/500X343.png" title="10 Photoshop Actions"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a href="#" class="animated slideInDown"><i class="fa fa-shopping-cart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="rs_product_price"><h2><small>$</small>212</h2></div>
-                                    </div>
-
-                                    <div class="rs_product_detail">
-                                        <h5><a href="product_single.html">10 Photoshop Actions</a></h5>
-                                        <div class="rs_rating">
-                                            <form>
-                                                <input value="5" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs">
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="rs_product_div_footer">
-                                        <div class="rs_author_div">
-                                            <img src="http://placehold.it/30X30" class="img-responsive" alt="">
-                                            <div>
-                                                <h4>Jeremy Luke</h4>
-                                                <p>PSD Actions</p>
-                                            </div>
-                                        </div>
-                                        <div class="rs_share">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-comment-o"></i> <span>08</span></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i> <span>29</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="rs_testimonial_section rs_toppadder50 rs_bottompadder50">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="rs_subscribe_section_heading">
-                                <h4>Subscribe to our free update deals, announcements, freebies offer and More..!</h4>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-lg-offset-3 col-md-offset-3">
-                            <div class="row">
-                                <div class="rs_subscribe_section_form rs_toppadder30">
-                                    <form class="form">
-                                        <input class="form-control" type="text" placeholder="Enter your mail address to start receiving" />
-                                        <a href="#" class="rs_button rs_button_orange pull-right rs_center_btn">Subscribe</a>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {{--LATEST PRODUCTS END--}}
+    @include('partials.newsletter')
 @endsection
+
+
 @section('cart-script')
     <script src="/js/app.js" type="text/javascript"></script>
 @endsection
