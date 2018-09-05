@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartController extends Controller
 {
@@ -17,6 +18,7 @@ class CartController extends Controller
         //cookies
         $id = session()->getId();
         $latest = DB::table('products')->orderBy('created_at', 'desc')->paginate(5);
+
         return view('pages.cart', compact('latest', 'id'));
     }
 
@@ -38,7 +40,11 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        //in order: item id, item name, quantity, item price
+        Cart::add($request->id, $request->name, 1, $request->price)->associate('App\Product');
+
+        return redirect()->route('cart.index')->with('success_message', 'Produsul a fost adaugat in cos!');
     }
 
     /**

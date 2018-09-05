@@ -22,61 +22,75 @@
     </div>
     <!--Breadcrumb end-->
     <?php
-       echo $id;
+      // echo $id;
     ?>
-    <div id="comp">
+    {{-- <div id="comp">
     <example-component></example-component>
-    </div>
+    </div> --}}
     <div class="rs_graybg rs_toppadder100 rs_bottompadder100">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="rs_message_div">
-                        <div class="rs_topmsg">
+                        {{-- <div class="rs_topmsg">
                             <p>Hey! Nice selection of items there. Please review your order below</p>
                             <p>and follow the next quick steps to complete your order.</p>
+                        </div> --}}
+                        @if(session()->has('success_message'))
+                        <div class="alert alert-success">
+                            <p><i class="fas fa-check-circle"></i>{{ session()->get('success_message') }}</p>
                         </div>
-                        {{--<div class="alert alert-success">--}}
-                            {{--<p><i class="fa fa-check-square-o"></i> Selected items was successfully added to your cart</p>--}}
-                            {{--<div class="rs_updatecart">--}}
-                                {{--<a href="#" class="rs_button rs_button_orange" data-text="Update Cart"><span>Update Cart</span></a>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
+                        @endif
+                        @if(count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach($errors->all() as $err)
+                                <li>{{ $err }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
                     </div>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="woo-cart-table rs_bottompadder30">
+                        @if(Cart::count() > 0)
                         <table class="table">
-                            <tr>
-                                <th></th>
-                                <th>Produs</th>
-                                <th>Cantitate</th>
-                                <th>Total</th>
-                                <th></th>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <img src="http://placehold.it/100X100" alt="">
-                                    <p>{name} </p>
-                                </td>
-                                <td class="text-center">
-                                    <div class="rs_incre_decre_btns">
-                                        <button type="button" class="btn_small count_minus" id="breakDecrease">
-                                            <i class="fa fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn_big count_val" id="breakValue" disabled></button>
-                                        <button type="button" class="btn_small count_plus" id="breakIncrease">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                                <td class="text-center"><span><small>$</small>{cost}</span>
-                                </td>
-                                <td class="text-center"><a href="#"><i class="fa fa-times"></i></a>
-                                </td>
-                            </tr>
-                        </table>
+                                <tr>
+                                    <th></th>
+                                    <th>Produs</th>
+                                    <th>Cantitate</th>
+                                    <th>Total</th>
+                                    <th></th>
+                                </tr>
+                                @foreach(Cart::content() as $item)
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <img src="{{asset($item->model->image_url)}}" alt="">
+                                    <p>{{$item->model->name}}, {{$item->rowId}}</p>
+                                    </td>
+                                    <td class="text-center">
+                                        <form action="">
+                                            <div class="rs_incre_decre_btns">
+                                                <button type="button" class="btn_small count_minus" id="breakDecrease">
+                                                  <i class="fa fa-minus"></i>
+                                                </button>
+                                                <button type="button" class="btn_big count_val" id="breakValue" disabled>asdf</button>
+                                                <button type="button" class="btn_small count_plus" id="breakIncrease">
+                                                  <i class="fa fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </td>
+                                    <td class="text-center"><span>{{$item->model->price}} <small> RON</small></span>
+                                    </td>
+                                    <td class="text-center"><a href="#"><i class="fa fa-times"></i></a>
+                                    </td>
+                                </tr>    
+                                @endforeach                        
+                            </table>
+                            <hr>
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-6 col-sm-6 col-xs-12">
@@ -121,6 +135,12 @@
             </div>
         </div>
     </div>
+    @else
+    <div class="rs_topmsg">
+        <p>Cosul de cumparaturi este gol.</p>
+        <p><i class="fas fa-shopping-basket"></i> <a class="a-white" href="{{url('toate-produsele')}}">Vezi Produsele</a> <i class="fas fa-shopping-basket"></i></p>
+    </div>
+    @endif
     {{--LATEST PRODUCTS START--}}
     <div class="rs_recentlyview_slider_section rs_toppadder100 rs_bottompadder80">
         <div class="container">

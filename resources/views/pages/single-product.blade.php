@@ -151,7 +151,14 @@
                             <p>Acest design poate fi imprimat pentru orice model de telefon si orice tip de husa</p>
                         </aside>
                         <aside class="widget widget_button">
-                            <a href="cart.html" class="rs_button rs_button_blue">Adauga in Cos</a>
+                        <form action="{{ action('CartController@store') }}" method="POST">
+                            {{ csrf_field() }}
+                        <input type="hidden" name="id" value="{{ $product->id }}">
+                        <input type="hidden" name="name" value="{{ $product->name }}">
+                        <input type="hidden" name="price" value="{{ $product->price }}">
+                        <button type="submit" class="rs_button rs_button_blue m-b-15">Adauga in Cos</button>
+                            {{-- <a href="#" class="rs_button rs_button_blue m-b-15">Adauga in Cos</a> --}}
+                        </form>
                             <a href="#" class="rs_button rs_button_orange">Cumpara ${{$product->price}}</a>
                         </aside>
                         <aside class="widget widget_Share">

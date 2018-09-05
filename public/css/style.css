@@ -10299,7 +10299,7 @@ progress::-moz-progress-bar {
 
 .woo-cart-table .table tr td img {
     float: left;
-    width: 100px;
+    /* width: 100px; */
     height: 100px;
     margin-right: 30px;
 }

@@ -127,7 +127,13 @@
                 </div>
                 @endif
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{url('/shopping-cart')}}"><i class="fa fa-shopping-cart"></i> <span class="badge badge-danger">4</span></a></li>
+                    <li>
+                        <a href="{{url('/shopping-cart')}}"><i class="fa fa-shopping-cart"></i> 
+                            @if(Cart::count() > 0)
+                            <span class="badge badge-danger">{{Cart::count()}}</span>
+                            @endif
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

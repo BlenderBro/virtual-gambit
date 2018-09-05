@@ -54,3 +54,14 @@ li.page-item.active > span{
 .padd-l-15{
     padding-left: 15px;
 }
+.m-b-15{
+    margin-bottom: 15px !important;
+}
+.a-white{
+    text-decoration: none;
+    color: #fff;
+}
+.a-white:hover{
+    text-decoration: underline;
+    color: #fff;
+}
