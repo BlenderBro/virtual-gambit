@@ -1,23 +1,11 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card card-default">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        I'm an example compoasdasdnent.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <h1>Comp here</h1>
 </template>
 
 <script>
     export default {
         mounted() {
-            console.log('Component mounted.')
+        
         }
     }
 </script>
