@@ -128,7 +128,7 @@
                         <a href="#" class="rs_button rs_button_orange">Finalizare Comanda</a>
                     </div>
                     <div class="rs_continuecart rs_toppadder50">
-                        <a href="#" class="rs_button rs_button_orange">Continua Cumparaturile</a>
+                    <a href="{{ route('products.index') }}" class="rs_button rs_button_orange">Continua Cumparaturile</a>
                     </div>
                 </div>
 
