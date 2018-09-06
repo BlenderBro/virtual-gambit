@@ -12,8 +12,8 @@ Route::get('/contact', function () {
 Route::get('404', ['as' => '404', 'uses' => 'ErrorHandlerController@errorCode404']);
 
 // PRODUCTS
-Route::get('toate-produsele', 'ProductController@index');
-Route::get('produs/{slug}', 'ProductController@show');
+Route::get('toate-produsele', 'ProductController@index')->name('products.index');
+Route::get('produs/{slug}', 'ProductController@show')->name('products.single');
 //add product
 //edit/del product
 
