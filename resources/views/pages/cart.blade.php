@@ -36,7 +36,7 @@
                             <p>Hey! Nice selection of items there. Please review your order below</p>
                             <p>and follow the next quick steps to complete your order.</p>
                         </div> --}}
-                        @if(session()->has('success_message'))
+                         @if(session()->has('success_message'))
                         <div class="alert alert-success">
                             <p><i class="fas fa-check-circle"></i>{{ session()->get('success_message') }}</p>
                         </div>
@@ -85,8 +85,15 @@
                                     </td>
                                     <td class="text-center"><span>{{$item->model->price}} <small> RON</small></span>
                                     </td>
-                                    <td class="text-center"><a href="#"><i class="fa fa-times"></i></a>
-                                    </td>
+                                    <td class="text-center">
+                                        <a href="#">
+                                        <form action="{{ action('CartController@removeItem') }}">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="rowId" value="{{$item->rowId}}">
+                                            <button type="submit" class="rmItem"><i class="fa fa-times"></i></button>
+                                        </form>
+                                        </a>                                       
+                                    </td>                            
                                 </tr>    
                                 @endforeach                        
                             </table>
@@ -131,16 +138,19 @@
                     <a href="{{ route('products.index') }}" class="rs_button rs_button_orange">Continua Cumparaturile</a>
                     </div>
                 </div>
-
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    @else
+                    <div class="rs_topmsg">
+                        <p>Cosul de cumparaturi este gol.</p>
+                        <p><i class="fas fa-shopping-basket"></i> 
+                        <a class="a-white" href="{{url('toate-produsele')}}">Vezi Produsele</a> 
+                        <i class="fas fa-shopping-basket"></i></p>
+                    </div>
+                    @endif
+                </div>                 
             </div>
         </div>
     </div>
-    @else
-    <div class="rs_topmsg">
-        <p>Cosul de cumparaturi este gol.</p>
-        <p><i class="fas fa-shopping-basket"></i> <a class="a-white" href="{{url('toate-produsele')}}">Vezi Produsele</a> <i class="fas fa-shopping-basket"></i></p>
-    </div>
-    @endif
     {{--LATEST PRODUCTS START--}}
     <div class="rs_recentlyview_slider_section rs_toppadder100 rs_bottompadder80">
         <div class="container">
@@ -175,9 +185,17 @@
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="#" class="animated slideInDown">
+                                                            <form action="{{ action('CartController@store') }}" method="POST">
+                                                                    {{ csrf_field() }}
+                                                                <input type="hidden" name="id" value="{{ $l->id }}">
+                                                                <input type="hidden" name="name" value="{{ $l->name }}">
+                                                                <input type="hidden" name="price" value="{{ $l->price }}">
+                                                                <button type="submit" class="addToCart"><i class="fa fa-shopping-cart"></i></button>
+                                                                    {{-- <a href="#" class="rs_button rs_button_blue m-b-15">Adauga in Cos</a> --}}
+                                                            </form>
+                                                            {{-- <a href="#" class="animated slideInDown">
                                                                 <i class="fa fa-shopping-cart"></i>
-                                                            </a>
+                                                            </a> --}}
                                                         </li>
                                                     </ul>
                                                 </div>

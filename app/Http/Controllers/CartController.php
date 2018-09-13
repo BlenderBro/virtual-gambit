@@ -81,6 +81,14 @@ class CartController extends Controller
         //
     }
 
+    public function removeItem(Request $request)
+    {
+        $rowId = $request->input('rowId');
+        Cart::remove($rowId);
+
+        return redirect()->route('cart.index')->with('success_message', 'Produsul a fost sters din cos!');
+    }
+
     /**
      * Remove the specified resource from storage.
      *

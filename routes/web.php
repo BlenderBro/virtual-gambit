@@ -20,6 +20,7 @@ Route::get('produs/{slug}', 'ProductController@show')->name('products.single');
 //CART
 Route::get('/shopping-cart', 'CartController@index')->name('cart.index');
 Route::post('/shopping-cart', 'CartController@store')->name('cart.addItemToCart');
+Route::get('/sterge-produs', 'CartController@removeItem')->name('cart.removeSingleItem');
 
 //temp destroy
 Route::get('/del', function () {
