@@ -12,7 +12,7 @@
                         data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off" data-title="Umbrella" data-param1="September 7, 2015"
                         data-param2="Alfon Much" data-description="">
                         <!-- MAIN IMAGE -->
-                        <img src="{{asset('images/slider/fliphone6cases.jpg')}}" alt="" width="1920" height="1080" data-lazyload="{{asset('images/slider/fliphone6cases.jpg')}}"
+                        <img src="{{asset('images/slider/fliphone6cases.jpg')}}" alt="" width="1920" height="1080" data-lazyload="{{asset('images/slider/sketch.png')}}"
                              data-bgposition="initial" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-responsive="on"
                              data-no-retina>
                         <div class="tp-caption tp-shape tp-shapewrapper   rs-parallaxlevel-0" id="slide-68-layer-1" data-x="['center','center','center','center']"
