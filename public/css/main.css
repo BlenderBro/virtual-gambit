@@ -44,6 +44,9 @@ li.page-item.active > span{
 .badge{
     background-color: #F25F5C;
 }
+#price-sm{
+    font-size: .6em;
+}
 /*HELPERS*/
 .center-text{
     text-align: center;

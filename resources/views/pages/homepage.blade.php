@@ -179,16 +179,20 @@
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="#" class="animated slideInDown">
-                                                                <i class="fa fa-shopping-cart"></i>
-                                                            </a>
+                                                            <form action="{{ action('CartController@store') }}" method="POST">
+                                                                    {{ csrf_field() }}
+                                                                <input type="hidden" name="id" value="{{ $product->id }}">
+                                                                <input type="hidden" name="name" value="{{ $product->name }}">
+                                                                <input type="hidden" name="price" value="{{ $product->price }}">
+                                                                <button type="submit" class="addToCart"><i class="fa fa-shopping-cart"></i></button>
+                                                                    {{-- <a href="#" class="rs_button rs_button_blue m-b-15">Adauga in Cos</a> --}}
+                                                            </form>
                                                         </li>
                                                     </ul>
                                                 </div>
                                             </div>
                                             <div class="rs_product_price">
-                                                <h2>
-                                                    <small>$</small>{{$product->price}}</h2>
+                                                <h2>{{$product->price}}<small id="price-sm">RON</small></h2>
                                             </div>
                                         </div>
 
