@@ -67,7 +67,7 @@
                                 <tr>
                                     <td></td>
                                     <td>
-                                        <img src="{{asset($item->model->image_url)}}" alt="">
+                                        <img src="{{ Voyager::image($item->model->image_url)}}" alt="">
                                     <p>{{$item->model->name}}, {{$item->rowId}}</p>
                                     </td>
                                     <td class="text-center">
@@ -171,7 +171,7 @@
                                     <div class="rs_product_div">
                                         <div class="rs_featureddiv">Nou</div>
                                         <div class="rs_product_img">
-                                            <img src="{{ asset($l->image_url) }}"
+                                            <img src="{{ Voyager::image($l->image_url)}}"
                                                  class="img-responsive latest-phones" alt="">
                                             <div class="rs_overlay">
                                                 <div class="rs_overlay_inner">
@@ -179,7 +179,7 @@
                                                         <li>
                                                             <a class="fancybox animated slideInDown"
                                                                data-fancybox-group="product"
-                                                               href="{{ asset($l->image_url) }}"
+                                                               href="{{ Voyager::image($l->image_url)}}"
                                                                title="{{$l->name}}">
                                                                 <i class="fa fa-eye"></i>
                                                             </a>

@@ -169,7 +169,7 @@
                                     <div class="rs_product_div">
                                         <div class="rs_featureddiv">Nou</div>
                                         <div class="rs_product_img">
-                                            <img src="{{ asset($product->image_url) }}" class="img-responsive latest-phones" alt="">
+                                            <img src="{{Voyager::image($product->image_url)}}" class="img-responsive latest-phones" alt="">
                                             <div class="rs_overlay">
                                                 <div class="rs_overlay_inner">
                                                     <ul>

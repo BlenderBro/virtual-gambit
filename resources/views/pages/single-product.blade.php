@@ -31,14 +31,14 @@
             <div class="row">
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                     <div class="rs_single_product_slider">
-                        <img class="single-phone" src="{{ asset($product->image_url)}}" alt="{{$product->name}}">
+                        <img class="single-phone" src="{{ Voyager::image($product->image_url)}}" alt="{{$product->name}}">
                     </div>
                     <div class="rs_single_product_btn_section rs_toppadder30 rs_bottompadder30">
 
                     </div>
                     <div class="rs_buy_license_section">
                         <h4>{{$product->name}}</h4>
-                        <p>{{$product->description}}</p>
+                        <p>{!!$product->description!!}</p>
                         <h4>Suport si Intrebari Frecvente:</h4>
                         <h5>Garantia Calitatii</h5>
                         <p>Husele sunt dintr-un silicon premium, fiind atent selecționate de colegii
@@ -205,7 +205,7 @@
                                     <div class="rs_product_div">
                                         <div class="rs_featureddiv">Nou</div>
                                         <div class="rs_product_img">
-                                            <img src="{{ asset($l->image_url) }}"
+                                            <img src="{{ Voyager::image($l->image_url)}}"
                                                  class="img-responsive latest-phones" alt="">
                                             <div class="rs_overlay">
                                                 <div class="rs_overlay_inner">
