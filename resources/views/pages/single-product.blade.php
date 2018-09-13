@@ -2,7 +2,7 @@
 @section('content')
 
     <?php
-    $cat = \App\Category::where('id', $product->category_id)->first();
+    // $cat = \App\Category::where('id', $product->category_id)->first();
     ?>
     <!--Breadcrumb start-->
     <div class="rs_pagetitle rs_toppadder40 rs_bottompadder40">
@@ -18,8 +18,8 @@
                     <ul class="breadcrumb">
                         <li><a href="{{url('/')}}">home</a></li>
                         <li><a href="{{url('/toate-produsele')}}">Toate Produsele</a></li>
-                        <li class="active">{!!  $product->name !!}</li>
-                        <p>{{$cat->name}}</p>
+                        {{-- <li class="active">{!!  $product->name !!}</li>
+                        <p>{{$cat->name}}</p> --}}
                     </ul>
                 </div>
             </div>
