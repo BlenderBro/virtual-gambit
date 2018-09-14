@@ -20,8 +20,10 @@ class CreateProductsTable extends Migration
             $table->text('features');
             $table->string('image_url');
             $table->float('price');
-            $table->integer('category_id')->references('id')->on('categories')->unsigned();
             $table->string('slug');
+            $table->text('meta_description');
+            $table->text('meta_keywords');
+            $table->enum('status', ['PUBLISHED', 'DRAFT', 'PENDING'])->default('DRAFT');
             $table->timestamps();
         });
     }
@@ -33,6 +35,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('produse');
+        Schema::dropIfExists('products');
     }
 }

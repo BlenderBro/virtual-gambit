@@ -7,11 +7,11 @@
 <!-- BEGIN HEAD -->
 <head>
     <meta charset="utf-8">
-    <title>Restored Multipurpose Responsive HTML Template</title>
+    <title>otherSkins</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
+    <meta name="description" content="<?php if (isset($product->meta_description)) {echo $product->meta_description;}elseif (isset($post->meta_description)) {echo $post->meta_description;}else{echo "Toate produsele noastre";}?>">
+    <meta name="keywords" content="<?php if (isset($product->meta_keywords)) {echo $product->meta_keywords;}elseif (isset($post->meta_keywords)) {echo $post->meta_keywords;}else{echo "huse, huse personalizate, printare UV, huse custom, husa iPhone, husa Samsung";}?>">
+    <meta name="author" content="Vlad Dobrescu <vlad.s.dobrescu@gmail.com>">
     <meta name="MobileOptimized" content="320">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!--srart theme style -->

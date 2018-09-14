@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use App\Product;
-use App\Category;
 
 class ProducsTableSeeder extends Seeder
 {
@@ -18,13 +17,12 @@ class ProducsTableSeeder extends Seeder
             $product->name = 'Produs nr ' . $i;
             $product->description = 'Seria S5 este una este cele mai populare serii de buget produse de catre Samsung. Are un ecran HD de 5.2", 2 GB ram, procesor octa-core si o camera de 13MP. Asa ca daca ai un telefon frumos si popular, iti recomandam sa ii protejezi spatele si colturile cu o Husă Dark Supreme Camo SAMSUNG Galaxy J5 2017, pentru ca stim cat de pretentios este spatele ala frumos, iar pentru ecran Guardo.shop recomanda o folie de sticla. Avem peste 3000 de design-uri diferite pentru husa ta personalizata, iar daca alegi sa cumperi 2 huse, facem noi cinste cu transportul!';
             $product->features = str_random(8);
-            $product->image_url = 'images/phones/s5.png';
+            $product->image_url = 'products\September2018\SHRYZtrCzxLGxYZND366.png';
             $product->price = random_int(50, 90);
-            $product->category_id = random_int(1,3);
+            $product->category_id = random_int(1, 3);
             $product->slug = str_replace(' ', '-', $product->name);
 
             $product->save();
-
         }
     }
 }
