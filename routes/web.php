@@ -2,9 +2,7 @@
 
 use Gloudemans\Shoppingcart\Facades\Cart;
 
-Route::get('/', function () {
-    return view('pages.homepage');
-});
+Route::get('/', 'HomepageController@index')->name('homepage');
 Route::get('/contact', function () {
     return view('pages.contact');
 });
@@ -27,10 +25,9 @@ Route::get('/del', function () {
     Cart::destroy();
 });
 
-// Auth::routes();
-// Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
-// Route::get('/home', 'HomeController@index')->name('home');
-
+//BLOG
+Route::get('/blog', 'BlogController@index')->name('blog.index');
+Route::get('/blog/{slug}', 'BlogController@show')->name('blog.single');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
