@@ -121,7 +121,7 @@
                 </div>
                 <div class="rs_user_profile">
                     <ul>
-                        <li><a href="{{url('/home')}}"><i class="fa fa-cog"></i> Dashboard</a></li>
+                        <li><a href="{{url('/admin')}}"><i class="fa fa-cog"></i> Dashboard</a></li>
                         <li><a href="{{url('/logout')}}"><i class="fa fa-futbol-o"></i> Logout</a></li>
                     </ul>
                 </div>

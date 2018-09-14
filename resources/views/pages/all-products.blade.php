@@ -39,7 +39,7 @@
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rs_toppadder30">
                                                 <div class="rs_product_div">
                                                     <div class="rs_product_img">
-                                                        <img src="{{ asset($product->image_url) }}"
+                                                        <img src="{{ Voyager::image($product->image_url) }}"
                                                              class="img-responsive latest-phones" alt="">
                                                         <div class="rs_overlay">
                                                             <div class="rs_overlay_inner">
@@ -47,7 +47,7 @@
                                                                     <li>
                                                                         <a class="fancybox animated slideInDown"
                                                                            data-fancybox-group="product"
-                                                                           href="{{ asset($product->image_url) }}"
+                                                                           href="{{ Voyager::image($product->image_url) }}"
                                                                            title="{{$product->name}}">
                                                                             <i class="fa fa-eye"></i>
                                                                         </a>

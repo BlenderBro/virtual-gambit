@@ -173,10 +173,7 @@
                         </aside>
                         <aside class="widget widget_technical_info">
                             <h4 class="widget-title">Informatii Tehnice</h4>
-                            <ul>
-                                <li><b>Material:</b> Silicon</li>
-                                <li><b>Finish:</b> Mat</li>
-                            </ul>
+                            {!!$product->features!!}                            
                         </aside>
 
                     </div>
