@@ -68,6 +68,9 @@ li.page-item.active > span{
     text-decoration: underline;
     color: #fff;
 }
+#thumb{
+    max-width: 80px;
+}
 button.rmItem{
 	-moz-border-radius:100%;
 	-webkit-border-radius:100%;

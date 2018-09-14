@@ -300,43 +300,46 @@
                 </div>
             </div>
             <div class="row">
+                @foreach ($posts as $post)                
+                {{-- single article --}}
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="rs_blogsection">
                         <div class="rs_blog_img">
-                            <img src="http://placehold.it/360X244" class="img-responsive" alt="">
+                        <img src="{{ Voyager::image($post->image)}}" class="img-responsive" alt="">
                             <div class="rs_blogsocialdiv">
                                 <input class='rs_sociallink' type='checkbox'>
                                 <label></label>
                                 <ul>
                                     <li class='rs_social_item'>
-                                        <a class='fa fa-facebook' href='https://www.facebook.com/' target='_blank'></a>
+                                        <a class='fab fa-facebook-f' href='https://www.facebook.com/' target='_blank'></a>
                                     </li>
                                     <li class='rs_social_item'>
-                                        <a class='fa fa-twitter' href='https://www.twitter.com/' target='_blank'></a>
+                                        <a class='fab fa-twitter' href='https://www.twitter.com/' target='_blank'></a>
                                     </li>
-                                    <li class='rs_social_item'>
+                                    {{-- <li class='rs_social_item'>
                                         <a class='fa fa-dribbble' href='https://dribbble.com/' target='_blank'></a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
 
                             </div>
                         </div>
                         <div class="rs_blog_data">
                             <h4>
-                                <a href="blog_single.html">10 Web Design Trends For 2015</a>
+                            <a href="{{ url('/blog/'.$post->slug)}}">{!! $post->title !!}</a>
                             </h4>
                             <span>by
                                 <a href="#">Steve Martin</a> |
-                                <a href="#">20 Nov, 2015</a>
+                                <a href="#">{{$post->created_at->diffForHumans()}}</a>
                             </span>
-                            <p>We are a fairly small, flexible design studio that designs for print and web. We work flexibly
-                                with clients to fulfil their design needs.</p>
+                            <p>{{$post->excerpt}}</p>
                         </div>
                     </div>
                 </div>
+                {{-- end single --}}
+                @endforeach
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="rs_btn_div rs_toppadder60 nopade">
-                        <a href="blog.html" class="rs_button rs_button_orange">Mai multe articole</a>
+                        <a href="{{url('/blog')}}" class="rs_button rs_button_orange">Mai multe articole</a>
                     </div>
                 </div>
             </div>
